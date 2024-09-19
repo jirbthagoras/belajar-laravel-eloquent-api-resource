@@ -16,9 +16,11 @@ return new class extends Migration
             $table->string("name", 100)->nullable(false);
             $table->bigInteger("price")->nullable(false);
             $table->integer("stock")->nullable(false)->default(0);
-            $table->unsignedBigInteger("category_id")->nullable(false);
+            $table->unsignedBigInteger("category_id")->nullable(false)->unsigned();
             $table->timestamps();
-            $table->foreign("category_id")->on("categories")->references("id")->onDelete("cascade");
+            $table->foreign("category_id")
+                ->references("id")->on("categories")
+                ->onDelete("cascade");
         });
     }
 

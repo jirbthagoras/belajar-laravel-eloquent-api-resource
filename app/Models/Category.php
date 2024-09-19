@@ -16,7 +16,7 @@ class Category extends Model
     public $incrementing = true;
     public $timestamps = true;
 
-    public function product(): HasMany
+    public function products(): HasMany
     {
         return $this->hasMany(Product::class, "category_id", "id");
     }

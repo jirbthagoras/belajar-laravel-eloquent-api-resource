@@ -17,7 +17,7 @@ class Product extends Model
     public $incrementing = true;
     public $timestamps = true;
 
-    public function categories(): BelongsTo
+    public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, "category_id", "id");
     }
