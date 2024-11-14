@@ -36,7 +36,7 @@ Route::get("/categories-custom", function () {
 
 Route::get('/product/{id}', function ($id) {
     $products = Product::find($id);
-    $products->load("category");
+    $products->load("category                                                                                                                                                                                                   ");
     return new \App\Http\Resources\ProductsResource($products);
 });
 
